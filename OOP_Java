@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+class Rectangle{
+    float dai;
+    float rong;
+	public void getInformation()
+    {
+        Scanner sc = new Scanner(System.in);
+        dai = sc.nextFloat();
+        rong = sc.nextFloat();
+    }
+
+    public void display()
+    {
+        System.out.println("Area: " + (dai * rong));
+        System.out.println("Perimeter: " + (2 * (dai + rong)));
+    }
+}
+
+public class Entry {
+	public static void main(String[]args) {
+		Rectangle r = new Rectangle();
+		r.getInformation();
+		r.display();
+	}
+}
