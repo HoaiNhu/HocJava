@@ -1,0 +1,112 @@
+//Như bạn đã được học ở bài trước, đây là phương thức trả về độ dài của một String
+import java.util.Scanner;
+
+public class Array {
+	public static void main(String[] args) {
+		String s = "Code";
+		System.out.print(s.length());
+	}
+}
+
+---------------------------------
+//Đây là phương thức trả về một ký tự trong String
+import java.util.Scanner;
+
+public class Array {
+	public static void main(String[] args) {
+		String s = "Code";
+		System.out.print(s.charAt(2));
+	}
+}
+----------------------------------
+//Phương thức này dùng để thay thế các chuỗi/ký tự được tìm thấy thành chuỗi/ký tự khác.
+import java.util.Scanner;
+
+public class Array {
+	public static void main(String[] args) {
+		System.out.println("Cod3l3arn".replace('3', 'e'));
+		System.out.println("Blackcat".replace("Black", "White"));
+	}
+}
+
+--------------------------------
+//Đây là hai phương thức dùng để chuyển các ký tự của một xâu từ in thường về in hoa và ngược lại.
+import java.util.Scanner;
+
+public class Array {
+	public static void main(String[] args) {
+		String s = "CoDeLeArN";
+		System.out.println(s.toUpperCase());
+		System.out.println(s.toLowerCase());
+	}
+}
+
+-----------------------------------------
+//Phương thức này trả về vị trí xuất hiện đầu tiên của một String trong String khác, nếu không tìm thấy thì trả về -1.
+import java.util.Scanner;
+
+public class Array {
+	public static void main(String[] args) {
+		String s = "Codelearn";
+		System.out.println(s.indexOf("learn"));
+		System.out.println(s.indexOf("black"));
+	}
+}
+----------------------------------------
+//Phương thức này dùng để kiểm tra một xâu có bắt đầu hoặc kết thúc băng một xâu khác không
+import java.util.Scanner;
+
+public class Array {
+	public static void main(String[] args) {
+		String name = "Codelearn";
+		System.out.println(name.startsWith("Code"));
+		System.out.println(name.startsWith("abc"));
+		System.out.println(name.endsWith("rn"));
+		System.out.println(name.endsWith("z"));
+	}
+}
+----------------------------------
+//Phương thức này dùng để tách một xâu ra thành mảng các xâu dựa trên một xâu cho trước
+import java.util.Scanner;
+
+public class Array {
+	public static void main(String[] args) {
+		String s = "Welcome to codelearn!";
+		String[] words = s.split(" ");
+		for(String word:words) {
+			System.out.println(word);
+		}
+	}
+}
+--------------------------------------
+//Đây là phương thức dùng để lấy ra một xâu con dựa trên chỉ số bắt đầu và chỉ số kết thúc của một xâu khác. 
+import java.util.Scanner;
+
+public class Array {
+	public static void main(String[] args) {
+		String name = "Codelearn";
+		System.out.println(name.substring(0, 2));
+		System.out.println(name.substring(0, 4));
+		System.out.println(name.substring(4));
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
