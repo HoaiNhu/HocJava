@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-class Rectangle{
+class Rectangle
+{
     float dai;
     float rong;
 	public void getInformation()
@@ -10,15 +11,27 @@ class Rectangle{
         rong = sc.nextFloat();
     }
 
+    public float getArea()
+    {
+        return dai * rong;
+    }
+
+    public float getPerimeter()
+    {
+        return 2 * (dai + rong);
+    }
+
     public void display()
     {
-        System.out.println("Area: " + (dai * rong));
-        System.out.println("Perimeter: " + (2 * (dai + rong)));
+        System.out.println("Area: " + getArea());
+        System.out.println("Perimeter: " + getPerimeter());
     }
 }
 
-public class Entry {
-	public static void main(String[]args) {
+public class Entry 
+{
+	public static void main(String[]args) 
+    {
 		Rectangle r = new Rectangle();
 		r.getInformation();
 		r.display();
