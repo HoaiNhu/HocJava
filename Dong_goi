@@ -362,6 +362,47 @@ public void previousSecond() {
 		second++;
 	}
 */
+
+/*
+  public void nextSecond() {
+    if (hour == 0 && minute == 0 && second == 0) {
+      hour = 24;
+    }
+
+    // chuyển tất cả sang tổng giây và + 1s
+    int totalSecondAfter
+      = hour * 60 * 60 + minute * 60 + second + 1;
+
+    // tính lại giờ, tính tổng số giờ và chia lấy dư cho 24
+    // vì đang tính theo 24h
+    hour = totalSecondAfter / 60 / 60 % 24;
+    // tính lại phút, tính tổng số phút và chia lấy dư cho 60 là ra số phút còn lại,
+    // phần chia hết cho 60 là số giờ đã được lấy ở trên
+    minute = totalSecondAfter / 60 % 60;
+    // tính lại giây, chia lấy dư cho 60 là ra số giây lẻ còn lại
+    second = totalSecondAfter % 60;
+  }
+
+  public void previousSecond() {
+    if (hour == 0 && minute == 0 && second == 0) {
+      hour = 24;
+    }
+
+    // chuyển tất cả sang tổng giây và - 1s
+    int totalSecondAfter
+      = hour * 60 * 60 + minute * 60 + second - 1;
+
+    // tính lại giờ, tính tổng số giờ và chia lấy dư cho 24
+    // vì đang tính theo 24h
+    hour = totalSecondAfter / 60 / 60 % 24;
+    // tính lại phút, tính tổng số phút và
+    // chia lấy dư cho 60 là ra số phút còn lại,
+    // phần chia hết cho 60 là số giờ đã được lấy ở trên
+    minute = totalSecondAfter / 60 % 60;
+    // tính lại giây, chia lấy dư cho 60 là ra số giây lẻ còn lại
+    second = totalSecondAfter % 60;
+  }
+*/
     public void display()
     {
         String hour = this.hour + "";
