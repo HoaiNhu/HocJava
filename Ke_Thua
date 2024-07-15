@@ -52,6 +52,7 @@ public class Entry {
 //static method not override
 //Ngăn override = final
 //lấy của lớp cha xuống xài trong override = super.<tên phthuc>
+//Muốn override thì phạm vi truy cập của lớp con phải >= lớp cha: private -> default -> protected -> public
 
 class Person {
 	private String name;
