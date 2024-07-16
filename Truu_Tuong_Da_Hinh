@@ -1,0 +1,214 @@
+-----------------------------------------------------------------------------------------
+//Đa hình
+Variable Hiding
+
+Variable Hiding xảy ra khi lớp con khai báo thuộc tính có tên giống tên thuộc tính ở lớp cha, lúc này thuộc tính của lớp cha sẽ không bị lớp con ghi đè mà bị lớp con ẩn đi:
+Còn một lưu ý nữa đó là ở bài này khi 2 lớp có 2 thuộc tính giống nhau, 2 phương thức giống nhau, nếu là thuộc tính thì thuộc tính của lớp con sẽ bị ẩn, nhưng nếu là phương thức thì phương thức của lớp cha se bị lớp con ghi đè.
+
+class SuperClass{
+	int x;
+}
+
+class SubClass extends SuperClass{
+	int x;
+}
+Trong ví dụ trên thuộc tính x ở lớp con và thuộc tính x ở lớp cha là 2 thuộc tính tồn tại độc lập. Do không bị ghi đè nên khi sử dụng up-casting thì thuộc tính được gọi vẫn là thuộc tính ở lớp cha:
+
+class SuperClass{
+	int x = 10;
+}
+
+class SubClass extends SuperClass{
+	int x = 20;
+}
+
+public class Entry {
+	public static void main(String[] args) {
+		SuperClass a = new SubClass();
+		System.out.println(a.x);
+	}
+}
+Kết quả khi chạy chương trình:
+
+10
+Muốn gọi tới được thuộc tính của lớp con bạn phải sử dụng down-casting giống như sau:
+
+class SuperClass{
+	int x = 10;
+}
+
+class SubClass extends SuperClass{
+	int x = 20;
+}
+
+public class Entry {
+	public static void main(String[] args) {
+		SuperClass a = new SubClass();
+		System.out.println(a.x);
+		System.out.println(((SubClass)a).x);
+	}
+}
+Kết quả khi chạy chương trình:
+
+10
+20
+
+//Truu tuong với abstract
+------------------------Person.java-----------------------
+abstract class Person
+{
+    private String name;
+    private String address;
+
+    public Person(String name, String address)
+    {
+        this.name = name;
+        this.address = address;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
+
+    public String getAddress()
+    {
+        return address;
+    }
+
+    public abstract void display();
+}
+------------------------------Employee.java--------------------------
+class Employee extends Person
+{
+    private int salary;
+
+    public Employee(String name, String address, int salary)
+    {
+        super(name, address);
+        this.salary = salary;
+    }
+    
+
+    @Override
+    public void display()
+    {
+        System.out.println("Employee name: " + super.getName());
+        System.out.println("Employee address: " + super.getAddress());
+        System.out.println("Employee salary: " + salary);
+
+    }
+}
+
+-------------------------------Customer.java------------------------------
+class Customer extends Person
+{
+    private int balance;
+
+    public Customer(String name, String address, int balance)
+    {
+        super(name, address);
+        this.balance = balance;
+    }
+    
+    
+    @Override
+    public void display()
+    {
+		System.out.println("Customer name: " + super.getName());
+		System.out.println("Customer address: " + super.getAddress());
+		System.out.println("Customer balance: " + balance);
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+//Trừu tượng vs Interface
+interface IFlyable {
+	void fly();
+}
+
+interface IEatable {
+	void eat();
+}
+
+class Bird implements IFlyable, IEatable {
+	@Override
+	public void fly() {
+		System.out.println("Bird flying");
+	}
+
+	@Override
+	public void eat() {
+		System.out.println("Bird eats");
+	}
+}
+
+public class Entry {
+	public static void main(String[] args) {
+		Bird bird = new Bird();
+		bird.eat();
+		bird.fly();
+	}
+}
+
+---------------------IShape----------------------
+interface IShape
+{
+    public double getArea();
+    public double getPerimeter();
+}
+-----------------Rectangle.java---------------
+class Rectangle implements IShape
+{
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width)
+    {
+        super();
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double getArea()
+    {
+        return length * width;
+    }
+
+    @Override
+    public double getPerimeter()
+    {
+        return 2 * (length + width);
+    }
+}
+
+-----------------Circle.java------------
+class Circle implements IShape
+{
+    private double radius;
+    public Circle(double radius)
+    {
+        this.radius = radius;
+    }
+
+    @Override
+    public double getArea()
+    {
+        return 3.14 * radius * radius;
+    }
+
+    @Override
+    public double getPerimeter()
+    {
+        return 2 * 3.14 * radius;
+    }
+}
