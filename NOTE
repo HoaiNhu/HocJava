@@ -1,0 +1,40 @@
+- Lỗi cú pháp khi gán giá trị mới cho một phần tử của ArrayList: Trong Java, bạn không thể gán giá trị mới cho một phần tử của ArrayList bằng cách sử dụng cú pháp p.get(index) = newValue;. Thay vào đó, bạn phải sử dụng phương thức set(index, value) để thay đổi giá trị của một phần tử trong ArrayList. -> fix p.set(i, p.get(j));
+
+- Lý thuyết: Nếu class không có phương thức khởi tạo nào thì khi chạy chương trình sẽ tự động thêm vào phương thức khởi tạo mặc định (không tham số). Nếu class đã có phương thức khởi tạo rồi thì khi chạy chương trình sẽ không tự động thêm vào phương thức khởi tạo mặc định nữa, bạn phải tự thêm vào nếu cần.
+Trong bài này: Point p = new Point(); nghĩa là cần đến phương thức khởi tạo không tham số, mà trong class lại không có (vì class đã có phương thức khởi tạo có tham số rồi nên không tự động thêm vào phương thức khởi tạo mặc định nữa)
+
+- 1 lớp con chỉ được extends duy nhất 1 abstract class và được implements nhiều interface.
+
+- lớp cha là lớp trừu tượng nên lớp con sẽ phải ghi đè toàn bộ method của lớp cha. Tuy nhiên, ở đây method input() chưa được ghi đè => compile error
+
+- up casting: khi biến của lớp cha tham chiếu đến đối tượng của lớp con thì chỉ gọi được đến các thuộc tính và phương thức của lớp cha và nếu lớp con ghi đè phương thức thì  gọi được đến lớp con. nếu lớp cha ko có phthuc mà lơps con có -> lỗi biên dịch
+
+- B b = new B() => đối tượng b của class B sẽ thực hiện method B().  Đầu tiên là lệnh super() để in ra A và sau đó là lệnh System.out.print("B") sẽ in ra B liền kề A. Như vậy, kết quả là AB.
+
+- class được định nghĩa với từ khóa final sẽ không cho phép các lớp khác kế thừa.
+
+- 1 biến là biến static thì tất cả các đối tượng thuộc lớp có biến đó đều sẽ dùng chung biến đó
+
+- Đây là variable hiding: xảy ra khi lớp con khai báo thuộc tính có tên giống với lớp cha => thuộc tính ở lớp cha bị ẩn đi (hiding) chứ không phải ghi đè => Dùng bình thường không liên quan đến nhau => không có lỗi biên dịch
+- Do là không phải ghi đè nên không cần quan tâm đến phạm vi truy cập. còn nếu là ghi đè thì mọi người cũng đã giải thích là cần có phạm vi truy cập >=ở lớp cha rồi
+
+- Final: Không thể thay đổi, không kế thừa, không ghi đè final
+
+- A là lớp cha của B nên không thể B a=new A();
+
+- Trong kế thừa, thì hàm khởi tạo của lớp cha luôn được gọi trước hàm khởi tạo của lớp con. default Constructor sẽ có super() nên khi construc lớp con khởi tạo sẽ gọi super() đến lớp cha
+
+- đặc điểm của overload
++ Phải trong cùng 1 lớp
++ Tên giống nhau
++ Tham số khác nhau
++ Kiểu trả về có thể khác nhau --> khác là lỗi
+
+
+
+
+
+
+
+
+
